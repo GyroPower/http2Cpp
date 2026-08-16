@@ -33,12 +33,14 @@ python scripts/build-install-conan.py --profile=conan-profiles/my_conan_profile
 
 Or if you make one on .conan2/profiles
 ```bash
-python scripts/build-install-conan.py --profile=my_conan_profile```
+python scripts/build-install-conan.py --profile=my_conan_profile
+```
 
 
 The build-install-cmake-system offer four arguments, '-c' or '--compiler', '-bt' or '--build-type', '-bs' or '--build-system' and the fourth option to pass the CMAKE_PREFIX_PATH to install '--cmake-prefix-path', to avoid run on sudo or as admin, is recommended to have defined the CMAKE_PREFIX_PATH env variable
 ```bash
-python scripts/build-install-cmake-system.py -c=clang -bt=debug -bs=make --cmake-prefix-path=$HOME/.local/cmake```
+python scripts/build-install-cmake-system.py -c=clang -bt=debug -bs=make --cmake-prefix-path=$HOME/.local/cmake
+```
 
 
 ##Development and local testing
