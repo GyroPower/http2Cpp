@@ -36,13 +36,13 @@ python scripts/build-install-conan.py --profile=my_conan_profile
 ```
 
 
-The build-install-cmake-system offer four arguments, '-c' or '--compiler', '-bt' or '--build-type', '-bs' or '--build-system' and the fourth option to pass the CMAKE_PREFIX_PATH to install '--cmake-prefix-path', to avoid run on sudo or as admin, is recommended to have defined the CMAKE_PREFIX_PATH env variable
+The build-install-cmake-system offer four arguments,use `-h` to get info of the arguments,to avoid run on sudo or as admin, is recommended to have defined the CMAKE_PREFIX_PATH env variable
 ```bash
 python scripts/build-install-cmake-system.py -c=clang -bt=debug -bs=make --cmake-prefix-path=$HOME/.local/cmake
 ```
 
 
-##Development and local testing
+## Development and local testing
 
 This section explains that those python scripts with "develop" is for just that, generates build files but does not build the library and it includes the example directory, just for toying or local development and it can be installed with the "install" scripts in the system.
 
