@@ -1,8 +1,7 @@
 
 # implementation of HTTP2 on Asio (still lack of client library implementation)  
 
-This is a simple example and learning project to do a very basic "framework" of a HTTP2 server using stand alone 
-Asio, nghttp2 and OpenSSL.
+This is a simple example and learning project to do a very basic "framework" of a HTTP2 server using stand alone Asio, nghttp2 and OpenSSL.
 
 ## Dependecies 
 
@@ -45,19 +44,17 @@ python scripts/build-install-cmake-system.py -c=clang -bt=debug -bs=make --cmake
 
 ##Development and local testing
 
-This section explains that those python scripts with "develop" is for just that, generates build files but does not build the library
-and it includes the example directory, just for toying or local development and it can be installed with the "install" scripts
-in the system.
+This section explains that those python scripts with "develop" is for just that, generates build files but does not build the library and it includes the example directory, just for toying or local development and it can be installed with the "install" scripts in the system.
 
-build-conan-develop is for building locally the library, it only generates the build files but does not build
+build-conan-develop is for building locally the library, it only generates the build files but does not build, use the -h flag to get info for the scripts arguments
 
 ```bash
-python scripts/build-lsp-support.py -d
+python scripts/build-conan-develop.py
 ```
 
 build-cmake-system-develop is the same as above
 
-test_server.py is for bench mark, run it and modify it if you need
+test_server.py is for bench mark, run it and modify it if you need for select port and url request 
 
 
 ## Example 
