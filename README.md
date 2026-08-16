@@ -27,14 +27,18 @@ Clone the repo:
 All build scripts receive arguments, use -h or --help for more info for arguments, all have default arguments.
 
 To build and install the library using conan just run the script to run build-install-conan from the root to build by default debug clang linked to libc++, use one of the conan profiles if you want from conan-profiles or make your own conan profile or use one from the profile directory of your conan install, normally on your user directory called .conan2/profiles
-```python scripts/build-install-conan.py --profile=conan-profiles/my_conan_profile```
+```bash
+python scripts/build-install-conan.py --profile=conan-profiles/my_conan_profile
+```
 
 Or if you make one on .conan2/profiles
-```python scripts/build-install-conan.py --profile=my_conan_profile```
+```bash
+python scripts/build-install-conan.py --profile=my_conan_profile```
 
 
 The build-install-cmake-system offer four arguments, '-c' or '--compiler', '-bt' or '--build-type', '-bs' or '--build-system' and the fourth option to pass the CMAKE_PREFIX_PATH to install '--cmake-prefix-path', to avoid run on sudo or as admin, is recommended to have defined the CMAKE_PREFIX_PATH env variable
-```python scripts/build-install-cmake-system.py -c=clang -bt=debug -bs=make --cmake-prefix-path=$HOME/.local/cmake```
+```bash
+python scripts/build-install-cmake-system.py -c=clang -bt=debug -bs=make --cmake-prefix-path=$HOME/.local/cmake```
 
 
 ##Development and local testing
@@ -44,7 +48,10 @@ and it includes the example directory, just for toying or local development and 
 in the system.
 
 build-conan-develop is for building locally the library, it only generates the build files but does not build
-```python scripts/build-lsp-support.py -d```
+
+```bash
+python scripts/build-lsp-support.py -d
+```
 
 build-cmake-system-develop is the same as above
 
