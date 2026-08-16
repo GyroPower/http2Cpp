@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch http2 server example release codelldb",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/example/server/build/Release/http2_server_byPower",
+      "args": [],
+      "cwd": "${workspaceFolder}/example/server/",
+      "console": "integratedTerminal",
+      "stopOnEntry": false
+    },
+    {
+      "name": "Launch http2 server example debug codelldb",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/example/server/build/Debug/http2_server_byPower",
+      "args": [],
+      "cwd": "${workspaceFolder}/example/server/",
+      "console": "integratedTerminal",
+      "stopOnEntry": false
+    },
+    {
+      "name": "Launch http2 server example develop release codelldb",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/Release/example/server/http2_server_byPower",
+      "args": [],
+      "cwd": "${workspaceFolder}/example/server/",
+      "console": "integratedTerminal",
+      "stopOnEntry": false
+    },
+    {
+      "name": "Launch http2 server example develop debug codelldb",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/Debug/example/server/http2_server_byPower",
+      "args": [],
+      "cwd": "${workspaceFolder}/example/server/",
+      "console": "integratedTerminal",
+      "stopOnEntry": false
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+.cache/
+CMakeUserPresets.json
+build/
+compile_commands.json
+localhost+2-key.pem
+localhost+2.pem
+
