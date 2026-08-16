@@ -21,9 +21,11 @@ This is a simple example and learning project to do a very basic "framework" of 
 The preferred and the one I use is conan but if you had installed the libraries manually it will work too 
 
 Clone the repo: 
-```git clone https://github.com/GyroPower/Http2Cpp.git```
+```bash
+git clone https://github.com/GyroPower/Http2Cpp.git
+```
 
-All build scripts receive arguments, use -h or --help for more info for arguments, all have default arguments.
+All build scripts receive arguments, use `-h` or `--help` for more info for arguments, all have default arguments.
 
 To build and install the library using conan just run the script to run build-install-conan from the root to build by default debug clang linked to libc++, use one of the conan profiles if you want from conan-profiles or make your own conan profile or use one from the profile directory of your conan install, normally on your user directory called .conan2/profiles
 ```bash
@@ -36,7 +38,7 @@ python scripts/build-install-conan.py --profile=my_conan_profile
 ```
 
 
-The build-install-cmake-system offer four arguments,use `-h` to get info of the arguments,to avoid run on sudo or as admin, is recommended to have defined the CMAKE_PREFIX_PATH env variable
+The build-install-cmake-system offer four arguments,use `-h` to get info of the arguments, to avoid run on sudo or as admin, is recommended to have defined the CMAKE_PREFIX_PATH env variable
 ```bash
 python scripts/build-install-cmake-system.py -c=clang -bt=debug -bs=make --cmake-prefix-path=$HOME/.local/cmake
 ```
