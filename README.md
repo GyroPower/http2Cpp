@@ -18,6 +18,7 @@ This is a simple example and learning project to do a very basic "framework" of 
 
 
 ## Build and install
+(Windows is not tested yet)
 The preferred and the one I use is conan but if you had installed the libraries manually it will work too 
 
 Clone the repo: 
