@@ -11,7 +11,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS true)
 
 find_package(asio QUIET)
 find_package(CLI11 2.6.2 QUIET)
-find_package(OpenSSL 3 CONFIG REQUIRED COMPONENTS SSL Crypto)
+find_package(OpenSSL 4 CONFIG REQUIRED COMPONENTS SSL Crypto)
 find_package(Threads REQUIRED)
 find_package(libnghttp2 QUIET)
 

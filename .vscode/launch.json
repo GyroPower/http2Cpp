@@ -36,7 +36,18 @@
       "type": "codelldb",
       "request": "launch",
       "program": "${workspaceFolder}/build/Debug/example/server/http2_server_byPower",
-      "args": [],
+      "args": [
+        "-p",
+        "8082",
+        "--https",
+        "false",
+        "-t",
+        "1",
+        "--pk",
+        "localhost+2.pem",
+        "-k",
+        "localhost+2-key.pem"
+      ],
       "cwd": "${workspaceFolder}/example/server/",
       "console": "integratedTerminal",
       "stopOnEntry": false

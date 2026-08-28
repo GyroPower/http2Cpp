@@ -14,7 +14,7 @@ class http2Cpp_recipe(ConanFile):
     # generators = "CMakeToolchain", "CMakeDeps"
 
     def requirements(self):
-        self.requires("openssl/3.6.3", transitive_headers=True)
+        self.requires("openssl/4.0.1", transitive_headers=True)
         self.requires("asio/1.38.0", transitive_headers=True)
         self.requires("libnghttp2/1.68.1", transitive_headers=True)
         self.requires("cli11/2.6.2", transitive_headers=True)

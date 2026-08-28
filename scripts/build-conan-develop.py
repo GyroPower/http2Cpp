@@ -109,7 +109,7 @@ def run_process():
     elif args.build_type != "Release" and args.build_type != "Debug":
         print(f"build_type: passing a rare argument, using {build_type}")
 
-    build_dir = script_dir / "../build" / build_type
+    build_dir = Path("build") / build_type
 
     build_system = "Unix Makefiles"
 
