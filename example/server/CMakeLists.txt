@@ -7,9 +7,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED On)
 set(CMAKE_CXX_EXTENSIONS Off)
 
 
-
-find_package(http2Cpp QUIET)
-
+if(NOT INCLUDE_EXAMPLE)
+  find_package(libHttp2Cpp QUIET)
+endif()
 
 
 
@@ -39,22 +39,22 @@ add_executable(${EXAMPLE_EXE} main.cpp)
 
 
 
-if(USE_LIB_CXX)
-  message(STATUS "libc++ using")
-  target_compile_options(${EXAMPLE_EXE} PRIVATE $<$<CXX_COMPILER_ID:Clang>:-stdlib=libc++>)
-endif()
+# if(USE_LIB_CXX)
+#   message(STATUS "libc++ using")
+#   target_compile_options(${EXAMPLE_EXE} PRIVATE $<$<CXX_COMPILER_ID:Clang>:-stdlib=libc++>)
+# endif()
 
 if(INCLUDE_EXAMPLE)
-
+  message(STATUS "Include example")
   target_link_libraries(${EXAMPLE_EXE} PRIVATE
-  http2Cpp)
+  libHttp2Cpp)
 
-  target_include_directories(${EXAMPLE_EXE} PRIVATE "${CMAKE_SOURCE_DIR}/http2Cpp/src")
+  target_include_directories(${EXAMPLE_EXE} PRIVATE "${CMAKE_SOURCE_DIR}/http2Cpp/src" "${CMAKE_SOURCE_DIR}/logger")
 
 else()
 
   target_link_libraries(${EXAMPLE_EXE} PRIVATE
-  http2Cpp::http2Cpp
+ libHttp2Cpp::libHttp2Cpp
 )
 endif()
 

@@ -51,6 +51,27 @@
       "cwd": "${workspaceFolder}/example/server/",
       "console": "integratedTerminal",
       "stopOnEntry": false
+    },
+    {
+      "name": "Launch http2 server example develop windows debug codelldb",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/Debug/example/server/http2_server_byPower.exe",
+      "args": [
+        "-p",
+        "8082",
+        "--https",
+        "false",
+        "-t",
+        "1",
+        "--pk",
+        "localhost+2.pem",
+        "-k",
+        "localhost+2-key.pem"
+      ],
+      "cwd": "${workspaceFolder}/example/server/",
+      "console": "integratedTerminal",
+      "stopOnEntry": false
     }
   ]
 }

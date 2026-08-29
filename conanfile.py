@@ -43,9 +43,9 @@ class http2Cpp_recipe(ConanFile):
         cmake.install()
 
     def package_info(self):
-        self.cpp_info.libs = ["http2Cpp"]
-        self.cpp_info.set_property("cmake_file_name", "http2Cpp")
-        self.cpp_info.set_property("cmake_target_name", "http2Cpp::http2Cpp")
+        self.cpp_info.libs = ["libHttp2Cpp"]
+        self.cpp_info.set_property("cmake_file_name", "libHttp2Cpp")
+        self.cpp_info.set_property("cmake_target_name", "libHttp2Cpp::libHttp2Cpp")
 
     def layout(self):
         cmake_layout(self)

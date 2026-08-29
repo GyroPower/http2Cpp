@@ -10,7 +10,7 @@ struct response;
 
 class method {
 public:
-  enum type { GET, POST, PUT, DELETE };
+  enum class type { Get, Post, Put, Delete };
 };
 
 // The core idea is to have a wrapper for a common url to add different methods

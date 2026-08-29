@@ -40,7 +40,7 @@ service::service(std::string service_name, std::string doc_root) {
     this->m_doc_root = "views/";
 
   url root{"/"};
-  root.insert_callback(method::GET, index_cb);
+  root.insert_callback(method::type::Get, index_cb);
   this->m_urls.insert({root.get_url_prefix(), root});
 
   // this->m_urls.insert({"/", index_cb});
@@ -94,13 +94,13 @@ response service::invoke_cb(const std::string &method,
   method::type m;
 
   if (method == "GET")
-    m = method::GET;
+    m = method::type::Get;
   else if (method == "POST")
-    m = method::POST;
+    m = method::type::Post;
   else if (method == "PUT")
-    m = method::PUT;
+    m = method::type::Put;
   else
-    m = method::DELETE;
+    m = method::type::Delete;
 
   response url_response{};
 

@@ -1,5 +1,5 @@
 #server
-set(LIB_NAME http2Cpp)
+set(LIB_NAME libHttp2Cpp)
 file(GLOB_RECURSE SERVER_FILES
 "${CMAKE_CURRENT_SOURCE_DIR}/src/http2Cpp/*.cpp"
 ${CMAKE_SOURCE_DIR}/logger.cpp)
@@ -42,6 +42,8 @@ if(NOT asio_FOUND)
     target_compile_definitions(asio::asio INTERFACE ASIO_STANDALONE)
     message("-- asio made")
   endif()
+else()
+  message(STATUS "Asio find_package found")
 
 endif()
 
@@ -81,7 +83,7 @@ endif()
 if(USE_LIB_CXX)
   message(STATUS "libc++ using")
 
-  target_compile_options(${LIB_NAME} PRIVATE $<$<CXX_COMPILER_ID:Clang>:-stdlib=libc++>)
+  # target_compile_options(${LIB_NAME} PRIVATE $<$<CXX_COMPILER_ID:Clang>:-stdlib=libc++>)
 endif()
 
 
@@ -142,13 +144,14 @@ install(FILES
 )
 
 if(WIN32)
-  target_link_options(${LIB_NAME} PRIVATE -static-libstdc++)
 
-  add_compile_definitions(${LIB_NAME} PRIVATE _WIN32_WINNT=0x0A00)
+  add_compile_definitions(${LIB_NAME} PUBLIC _WIN32_WINNT=0x0A00)
 
-  target_compile_definitions(${LIB_NAME} PRIVATE NGHTTP2_STATICLIB)
+  target_compile_definitions(${LIB_NAME} PUBLIC NGHTTP2_STATICLIB NGHTTP2_NO_SSIZE_T ASIO_HAS_THREADS)
 
   target_link_libraries(${LIB_NAME} asio::asio Threads::Threads OpenSSL::SSL OpenSSL::Crypto ws2_32 mswsock libnghttp2::libnghttp2 CLI11::CLI11)
+
+  message(STATUS "lib name: ${LIB_NAME}")
 
 else()
 

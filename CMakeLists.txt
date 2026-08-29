@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED On)
 set(CMAKE_CXX_EXTENSIONS Off)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS true)
+cmake_policy(SET CMP0111 OLD)
 
 
 find_package(asio QUIET)
@@ -55,6 +56,7 @@ message(STATUS "Mode: ${CMAKE_BUILD_TYPE}")
 #     add_link_options(-fsanitize=address)
 # endif()
 
+add_subdirectory(http2Cpp)
 
 if(INCLUDE_EXAMPLE)
 
@@ -62,7 +64,6 @@ if(INCLUDE_EXAMPLE)
   add_subdirectory(example/server)
 endif()
 
-add_subdirectory(http2Cpp)
 
 
 

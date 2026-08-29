@@ -2,6 +2,7 @@
 #define SERVER_HPP
 #include "io_context_pool.hpp"
 #include "net.hpp"
+#include <asio/signal_set.hpp>
 #include <asio/ssl/context.hpp>
 #include <asio/ssl/context_base.hpp>
 #include <map>
@@ -12,7 +13,7 @@ class io_context_pool;
 class service;
 
 class server {
-  std::unique_ptr<io_context_pool> m_io_ctx_pool;
+  io_context_pool m_io_ctx_pool;
   tcp::acceptor m_acceptor;
   ssl::context m_ssl_ctx;
   std::size_t num_threads = 1;

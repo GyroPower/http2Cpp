@@ -2,6 +2,7 @@
 #define RESPONSE_HPP
 
 #include <string>
+
 namespace http2Cpp {
 
 struct response {
