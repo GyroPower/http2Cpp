@@ -53,9 +53,9 @@ if(INCLUDE_EXAMPLE)
 
 else()
 
-  target_link_libraries(${EXAMPLE_EXE} PRIVATE
- libHttp2Cpp::libHttp2Cpp
-)
+  target_link_libraries(${EXAMPLE_EXE} PUBLIC
+    libHttp2Cpp::libHttp2Cpp
+  )
 endif()
 
 # if(LINUX)

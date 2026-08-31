@@ -31,7 +31,7 @@ default_clang_profiles_posix = {
 }
 
 default_clang_profiles_windows = {
-    "Debug": "conan-profiles/windows/clang_debugCpp23",
+    "Debug": "conan-profiles/windows/clang64_debugCpp23",
     "Release": "conan-profiles/windows/clang_relCpp23",
 }
 
@@ -41,7 +41,7 @@ default_gcc_profiles_posix = {
 }
 
 default_gcc_profiles_windows = {
-    "Debug": "conan-profiles/windows/gcc_debugCpp23",
+    "Debug": "conan-profiles/windows/gcc_ucrt64_debugCpp23",
     "Release": "conan-profiles/windows/gcc_relCpp23",
 }
 

@@ -28,7 +28,7 @@ def run_process():
     if args.compiler == "clang":
         compiler_c = "clang"
         compiler_cxx = "clang++"
-    elif args.compiler != "clang" or args.compiler != "gcc":
+    elif args.compiler != "clang" and args.compiler != "gcc":
         compiler_c = "gcc"
         compiler_cxx = "g++"
         print(f"-- Error: compiler not contempled for build of library, using: {compiler_c}")

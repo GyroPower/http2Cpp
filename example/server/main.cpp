@@ -48,7 +48,8 @@ int main(int argc, char **argv) {
     DebugLog::logClassStatus(DebugLog::LOG_INFO,
                              "port: " + std::to_string(port));
     DebugLog::logClassStatus(DebugLog::LOG_INFO,
-                             std::string("https") + (https ? "true" : "false"));
+                             std::string("https: ") +
+                                 (https ? "true" : "false"));
     DebugLog::logClassStatus(DebugLog::LOG_INFO, "public_key: " + public_key);
     DebugLog::logClassStatus(DebugLog::LOG_INFO, "key_private: " + key);
 
