@@ -67,8 +67,7 @@ There is a very minimal example code for the server and client api usage (not ye
 
 Run the app using the .vscode directory launch.json for vscode or neovim 
 (It assumes it's installed lldb extension for vscode or codelldb for neovim with DAP) or 
-run it directly from the build directory in the terminal:
-- From the project root directory 
+run it directly from the build directory in the terminal, from the project root directory 
 ```bash
 ./build/Debug/example/server/http2_server_byPower
 ```
