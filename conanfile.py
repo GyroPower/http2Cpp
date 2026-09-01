@@ -6,8 +6,8 @@ class http2Cpp_recipe(ConanFile):
     name = "http2cpp"
     version = "0.0.1"
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "fPIC": [True, False], "h2load": [True, False]}
-    default_options = {"shared": False, "fPIC": True, "h2load": False}
+    options = {"shared": [True, False], "fPIC": [True, False]}
+    default_options = {"shared": False, "fPIC": True}
 
     exports_sources = "CMakeLists.txt", "http2Cpp/**", "logger/*"
 
@@ -22,10 +22,6 @@ class http2Cpp_recipe(ConanFile):
     def config_options(self):
         if self.settings.os == "Windows":
             del self.options.fPIC
-
-    def configure(self):
-        if self.options.h2load:
-            self.options["libnghttp2/1.68.1"].with_app = True
 
     def build(self):
         cmake = CMake(self)
