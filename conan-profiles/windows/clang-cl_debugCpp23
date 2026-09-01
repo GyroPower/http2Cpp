@@ -1,0 +1,19 @@
+[settings]
+os=Windows
+arch=x86_64
+build_type=Debug
+compiler=clang
+compiler.version=22
+compiler.cppstd=23
+compiler.runtime=static
+compiler.runtime_type=Debug
+compiler.runtime_version=v145
+
+[buildenv]
+PATH=+(path)C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/Llvm/x64/bin/clang-cl
+
+
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.build:compiler_executables = {"c": "clang-cl", "cpp": "clang-cl"}
+tools.compilation:verbosity=verbose

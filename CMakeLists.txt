@@ -12,6 +12,7 @@ cmake_policy(SET CMP0111 OLD)
 
 find_package(asio QUIET)
 find_package(CLI11 2.6.2 QUIET)
+set(OPENSSL_USE_STATIC_LIBS ON)
 find_package(OpenSSL 4 CONFIG REQUIRED COMPONENTS SSL Crypto)
 find_package(Threads REQUIRED)
 find_package(libnghttp2 QUIET)

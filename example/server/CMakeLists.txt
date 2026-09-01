@@ -53,6 +53,7 @@ if(INCLUDE_EXAMPLE)
 
 else()
 
+  message(STATUS "Build example")
   target_link_libraries(${EXAMPLE_EXE} PUBLIC
     libHttp2Cpp::libHttp2Cpp
   )

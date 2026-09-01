@@ -63,6 +63,7 @@ if(NOT libnghttp2_FOUND)
         NGHTTP2_LIBRARY NGHTTP2_INCLUDE_DIR)
 
   if(NGHTTP2_FOUND AND NOT TARGET nghttp2::nghttp2)
+    message(STATUS "nghttp2 added")
     add_library(libnghttp2::libnghttp2 UNKNOWN IMPORTED)
     set_target_properties(libnghttp2::libnghttp2 PROPERTIES
             IMPORTED_LOCATION "${NGHTTP2_LIBRARY}"
@@ -147,9 +148,18 @@ if(WIN32)
 
   add_compile_definitions(${LIB_NAME} PUBLIC _WIN32_WINNT=0x0A00)
 
-  target_compile_definitions(${LIB_NAME} PUBLIC NGHTTP2_STATICLIB NGHTTP2_NO_SSIZE_T ASIO_HAS_THREADS)
+  target_compile_definitions(${LIB_NAME} PUBLIC NGHTTP2_STATICLIB NGHTTP2_NO_SSIZE_T)
 
-  target_link_libraries(${LIB_NAME} asio::asio Threads::Threads OpenSSL::SSL OpenSSL::Crypto ws2_32 mswsock libnghttp2::libnghttp2 CLI11::CLI11)
+  target_compile_definitions(${LIB_NAME} PUBLIC ASIO_HAS_THREADS)
+  target_link_libraries(
+    ${LIB_NAME} PUBLIC
+    mswsock ws2_32 wsock32
+    asio::asio
+    Threads::Threads
+    OpenSSL::SSL
+    OpenSSL::Crypto
+    libnghttp2::libnghttp2
+    CLI11::CLI11)
 
   message(STATUS "lib name: ${LIB_NAME}")
 

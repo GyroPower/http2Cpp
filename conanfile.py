@@ -47,5 +47,8 @@ class http2Cpp_recipe(ConanFile):
         self.cpp_info.set_property("cmake_file_name", "libHttp2Cpp")
         self.cpp_info.set_property("cmake_target_name", "libHttp2Cpp::libHttp2Cpp")
 
+        if self.settings.os == "Windows":
+            self.cpp_info.system_libs = ["mswsock", "ws2_32", "wsock32"]
+
     def layout(self):
         cmake_layout(self)

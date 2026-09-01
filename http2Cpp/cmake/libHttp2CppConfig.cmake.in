@@ -1,7 +1,8 @@
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
 
-find_dependency(OpenSSL 3 CONFIG REQUIRED)
+find_dependency(OpenSSL 4 CONFIG REQUIRED)
+find_dependency(CLI11 REQUIRED)
 find_dependency(Threads REQUIRED)
 
 
@@ -23,8 +24,8 @@ if(NOT TARGET nghttp2::nghttp2)
     )
 
     if(NGHTTP2_LIBRARY AND NGHTTP2_INCLUDE_DIR)
-        add_library(nghttp2::nghttp2 UNKNOWN IMPORTED)
-        set_target_properties(nghttp2::nghttp2 PROPERTIES
+        add_library(libnghttp2::libnghttp2 UNKNOWN IMPORTED)
+        set_target_properties(libnghttp2::libnghttp2 PROPERTIES
             IMPORTED_LOCATION "${NGHTTP2_LIBRARY}"
             INTERFACE_INCLUDE_DIRECTORIES "${NGHTTP2_INCLUDE_DIR}"
         )
@@ -34,6 +35,6 @@ if(NOT TARGET nghttp2::nghttp2)
 endif()
 
 
-include("${CMAKE_CURRENT_LIST_DIR}/http2CppTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/libHttp2CppTargets.cmake")
 
-check_required_components(http2Cpp)
+check_required_components(libHttp2Cpp)

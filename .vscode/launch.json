@@ -6,7 +6,18 @@
       "type": "codelldb",
       "request": "launch",
       "program": "${workspaceFolder}/example/server/build/Release/http2_server_byPower",
-      "args": [],
+      "args": [
+        "-p",
+        "8082",
+        "--https",
+        "false",
+        "-t",
+        "2",
+        "--pk",
+        "localhost+2.pem",
+        "-k",
+        "localhost+2-key.pem"
+      ],
       "cwd": "${workspaceFolder}/example/server/",
       "console": "integratedTerminal",
       "stopOnEntry": false
@@ -16,7 +27,18 @@
       "type": "codelldb",
       "request": "launch",
       "program": "${workspaceFolder}/example/server/build/Debug/http2_server_byPower",
-      "args": [],
+      "args": [
+        "-p",
+        "8082",
+        "--https",
+        "false",
+        "-t",
+        "2",
+        "--pk",
+        "localhost+2.pem",
+        "-k",
+        "localhost+2-key.pem"
+      ],
       "cwd": "${workspaceFolder}/example/server/",
       "console": "integratedTerminal",
       "stopOnEntry": false
@@ -42,7 +64,7 @@
         "--https",
         "false",
         "-t",
-        "1",
+        "2",
         "--pk",
         "localhost+2.pem",
         "-k",
@@ -63,7 +85,51 @@
         "--https",
         "false",
         "-t",
-        "1",
+        "2",
+        "--pk",
+        "localhost+2.pem",
+        "-k",
+        "localhost+2-key.pem"
+      ],
+      "cwd": "${workspaceFolder}/example/server/",
+      "console": "integratedTerminal",
+      "stopOnEntry": false
+    },
+
+    {
+      "name": "Launch http2 server example develop msvc windows debug codelldb",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/example/server/Debug/http2_server_byPower.exe",
+      "args": [
+        "-p",
+        "8082",
+        "--https",
+        "false",
+        "-t",
+        "2",
+        "--pk",
+        "localhost+2.pem",
+        "-k",
+        "localhost+2-key.pem"
+      ],
+      "cwd": "${workspaceFolder}/example/server/",
+      "console": "integratedTerminal",
+      "stopOnEntry": false
+    },
+
+    {
+      "name": "Launch http2 server example windows debug codelldb",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/example/server/build/Debug/http2_server_byPower.exe",
+      "args": [
+        "-p",
+        "8082",
+        "--https",
+        "false",
+        "-t",
+        "2",
         "--pk",
         "localhost+2.pem",
         "-k",
