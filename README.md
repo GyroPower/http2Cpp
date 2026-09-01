@@ -3,6 +3,9 @@
 
 This is a simple example and learning project to do a very basic "framework" of a HTTP2 server using stand alone Asio, nghttp2 and OpenSSL.
 
+# Note 
+The server implementation expects certification files in pem format, look at example server for more info, this will likely to change
+
 ## Dependecies 
 
 - Python 3.14

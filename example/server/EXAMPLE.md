@@ -2,6 +2,9 @@
 
 Here is just a test demo of the implementation for server in Http2Cpp using CLI11 for command line arguments, If you build and installed the library you can just run one of the two scripts or run yourself the commands in the terminal, the example by default is included in the develop scripts for entry point and extend a real usage of the library.
 
+# Notes 
+The .vscode directory have a launch.json and the example/main.cpp shows what it expects a server instance, the certification files are expected to be in .pem format, this will likely to change for more flexible setup and to use certification files from default path of the OS, but for simplicity you will give the exact location, you can use mkcert for the example by now
+
 # Build 
 
 Be aware of linking the same std backend if you compile with clang using libc++ or stdlibc++11 in the conan profile you provided or if you get the sources of the libraries by yourself and compile it with one of those std backends using clang.
